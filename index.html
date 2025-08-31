@@ -5,6 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Política de Privacidade - StoneLink</title>
     <style>
+        @font-face {
+            font-family: 'KohinoorBangla';
+            src: url('./assets/fonts/KohinoorBangla.ttc') format('truetype-collection');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        :root {
+            /* Cores do tema claro */
+            --cor-primaria: #5CA997;
+            --cor-secundaria: #2964C2;
+            --cor-erro: #FF2C2F;
+            --cor-fundo: #FFFFFF;
+            --cor-superficie: #F7F7F7;
+            --cor-texto-principal: #000000;
+            --cor-texto-secundario: #4C4C4C;
+            --cor-borda: #E8E8E8;
+            --cor-texto-em-primaria: #FFFFFF;
+            --cor-gradiente-fundo: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            --cor-gradiente-header: linear-gradient(135deg, #5CA997 0%, #2964C2 100%);
+            --logo-url: url('./assets/images/png/logo-light.png');
+            
+            /* Tipografia */
+            --fonte-principal: 'KohinoorBangla', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        [data-theme="dark"] {
+            --cor-fundo: #333333;
+            --cor-superficie: #4C4C4C;
+            --cor-texto-principal: #FFFFFF;
+            --cor-texto-secundario: #D2D2D2;
+            --cor-borda: #5b5b5b;
+            --cor-gradiente-fundo: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+            --cor-gradiente-header: linear-gradient(135deg, #4a8a7a 0%, #1e4a8c 100%);
+            --logo-url: url('./assets/images/png/logo_dark.png');
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -12,11 +49,12 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: var(--fonte-principal);
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--cor-texto-principal);
+            background: var(--cor-gradiente-fundo);
             min-height: 100vh;
+            transition: background 0.3s ease, color 0.3s ease;
         }
 
         .container {
@@ -25,14 +63,49 @@
             padding: 20px;
         }
 
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--cor-primaria);
+            color: var(--cor-texto-em-primaria);
+            border: none;
+            border-radius: 50px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-family: var(--fonte-principal);
+            font-weight: 500;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .theme-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+        }
+
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: var(--cor-gradiente-header);
+            color: var(--cor-texto-em-primaria);
             padding: 40px 30px;
             border-radius: 15px;
             margin-bottom: 30px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             text-align: center;
+            position: relative;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            background-image: var(--logo-url);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0 auto 15px;
+            transition: background-image 0.3s ease;
         }
 
         .header h1 {
@@ -48,11 +121,12 @@
         }
 
         .content {
-            background: white;
+            background: var(--cor-fundo);
             padding: 40px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             margin-bottom: 20px;
+            transition: background 0.3s ease;
         }
 
         .section {
@@ -60,16 +134,16 @@
         }
 
         .section h2 {
-            color: #667eea;
+            color: var(--cor-primaria);
             font-size: 1.8rem;
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 3px solid #667eea;
+            border-bottom: 3px solid var(--cor-primaria);
             font-weight: 600;
         }
 
         .section h3 {
-            color: #764ba2;
+            color: var(--cor-secundaria);
             font-size: 1.4rem;
             margin-bottom: 15px;
             margin-top: 25px;
@@ -94,46 +168,51 @@
         }
 
         .highlight {
-            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            background: var(--cor-superficie);
             padding: 20px;
             border-radius: 10px;
             margin: 20px 0;
-            border-left: 4px solid #667eea;
+            border-left: 4px solid var(--cor-primaria);
+            transition: background 0.3s ease;
         }
 
         .contact-info {
-            background: #f8f9fa;
+            background: var(--cor-superficie);
             padding: 25px;
             border-radius: 10px;
             margin-top: 30px;
-            border: 1px solid #e9ecef;
+            border: 1px solid var(--cor-borda);
+            transition: background 0.3s ease, border-color 0.3s ease;
         }
 
         .footer {
             text-align: center;
             padding: 20px;
-            color: #666;
+            color: var(--cor-texto-secundario);
             font-size: 0.9rem;
         }
 
         a {
-            color: #667eea;
+            color: var(--cor-primaria);
             text-decoration: none;
             font-weight: 500;
+            transition: color 0.3s ease;
         }
 
         a:hover {
             text-decoration: underline;
+            color: var(--cor-secundaria);
         }
 
         .stone-icon {
             display: inline-block;
             width: 20px;
             height: 20px;
-            background: #667eea;
+            background: var(--cor-primaria);
             border-radius: 3px;
             margin-right: 8px;
             vertical-align: middle;
+            transition: background 0.3s ease;
         }
 
         @media (max-width: 768px) {
@@ -156,9 +235,14 @@
     </style>
 </head>
 <body>
+    <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">
+        🌙 Modo Escuro
+    </button>
+    
     <div class="container">
         <div class="header">
-            <h1><span class="stone-icon"></span>StoneLink</h1>
+            <div class="logo"></div>
+            <h1>StoneLink</h1>
             <div class="subtitle">Política de Privacidade</div>
         </div>
 
@@ -279,5 +363,57 @@
             <p>Esta política está em conformidade com a Lei Geral de Proteção de Dados (LGPD) - Lei nº 13.709/2018</p>
         </div>
     </div>
+
+    <script>
+        // Função para alternar entre temas
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggle = document.getElementById('themeToggle');
+            
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                themeToggle.innerHTML = '🌙 Modo Escuro';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeToggle.innerHTML = '☀️ Modo Claro';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Carregar tema salvo ou detectar preferência do sistema
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const themeToggle = document.getElementById('themeToggle');
+            
+            if (savedTheme === 'dark') {
+                document.body.setAttribute('data-theme', 'dark');
+                themeToggle.innerHTML = '☀️ Modo Claro';
+            } else if (savedTheme === 'light') {
+                document.body.removeAttribute('data-theme');
+                themeToggle.innerHTML = '🌙 Modo Escuro';
+            } else {
+                // Detectar preferência do sistema
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.body.setAttribute('data-theme', 'dark');
+                    themeToggle.innerHTML = '☀️ Modo Claro';
+                } else {
+                    themeToggle.innerHTML = '🌙 Modo Escuro';
+                }
+            }
+        }
+
+        // Carregar tema ao inicializar a página
+        document.addEventListener('DOMContentLoaded', loadTheme);
+
+        // Escutar mudanças na preferência do sistema
+        if (window.matchMedia) {
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+                if (!localStorage.getItem('theme')) {
+                    loadTheme();
+                }
+            });
+        }
+    </script>
 </body>
 </html>
