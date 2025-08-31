@@ -40,7 +40,6 @@ Este repositório contém a **Política de Privacidade** oficial do **StoneLink*
 ```
 stonelink-politica-privacidade/
 ├── index.html          # Política de privacidade principal
-├── index.md           # Versão em Markdown (se necessário)
 └── README.md          # Este arquivo de documentação
 ```
 
@@ -141,7 +140,7 @@ Para questões relacionadas à privacidade e proteção de dados:
 
 ## 📄 Licença
 
-© 2024 StoneLink - Marketplace de Mármore, Granito e Pedras Naturais.  
+© 2025 StoneLink - Marketplace de Mármore, Granito e Pedras Naturais.  
 Todos os direitos reservados.
 
 ---
