@@ -1,4 +1,4 @@
-# Política de Privacidade – StoneLink App
+<!-- # Política de Privacidade – StoneLink App
 
 **Última atualização:** [Data de Vigência, ex: 31 de agosto de 2025]
 
@@ -47,4 +47,4 @@ Podemos atualizar nossa Política de Privacidade periodicamente. Notificaremos v
 
 ## 7. Contato
 
-Se você tiver alguma dúvida sobre esta Política de Privacidade, entre em contato conosco pelo e-mail: **[Seu Email de Contato]**.
+Se você tiver alguma dúvida sobre esta Política de Privacidade, entre em contato conosco pelo e-mail: **[Seu Email de Contato]**. -->
