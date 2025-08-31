@@ -123,15 +123,27 @@
             position: relative;
         }
 
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
         .logo {
-            width: 60px;
-            height: 60px;
+            width: 120px;
+            height: 120px;
             background-image: var(--logo-url);
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            margin: 0 auto 15px;
             transition: background-image 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .header-text {
+            text-align: center;
         }
 
         .header h1 {
@@ -259,6 +271,16 @@
                 padding: 25px;
             }
 
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .logo {
+                width: 80px;
+                height: 80px;
+            }
+
             .theme-toggle {
                 position: fixed;
                 top: 10px;
@@ -288,9 +310,13 @@
     
     <div class="container">
         <div class="header">
-            <div class="logo"></div>
-            <h1>StoneLink</h1>
-            <div class="subtitle">Política de Privacidade</div>
+            <div class="header-content">
+                <div class="logo"></div>
+                <div class="header-text">
+                    <h1>StoneLink</h1>
+                    <div class="subtitle">Política de Privacidade</div>
+                </div>
+            </div>
         </div>
 
         <div class="content">
